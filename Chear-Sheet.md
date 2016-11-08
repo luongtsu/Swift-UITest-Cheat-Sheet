@@ -1,6 +1,6 @@
 
 ## How to prepare for UITest
-- Check your projects if UITest target is existing. If not, don't worry. Let add it by opening XCode, choose File/New/Target, choose iOS UI Testing Bundle, Next & Finish.
+- Check your projects if UITest target is existing. If not, don't worry. Let's add it by opening XCode, choose File/New/Target, choose iOS UI Testing Bundle, Next & Finish.
 - User @testable macro to allow UITest class access you test class  
 	`@testable import My_UITest_Example`   
 - Access application through XCUIApplication, you can launch(), you also can terminate() it.
