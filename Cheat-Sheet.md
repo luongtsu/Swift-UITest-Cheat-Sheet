@@ -1,3 +1,9 @@
+#Swift UITest Cheat Sheet (Updated for Swift 3.0)
+
+## Table of Contents
+
+* [How to prepare for UITest in XCode](#How to prepare for UITest in XCode)
+
 
 ## How to prepare for UITest in XCode
 - Check your projects if UITest target is existing. If not, don't worry. Let's add it by opening XCode, choose File/New/Target, choose iOS UI Testing Bundle, Next & Finish.
