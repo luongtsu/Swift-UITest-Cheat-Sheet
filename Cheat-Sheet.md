@@ -60,7 +60,8 @@ XCTAssert(detailsLabel.exists)
 ## Interactions with system controls
 - Tap a button
 ```swift
-app.buttons["Add"].tap()```
+app.buttons["Add"].tap()
+```
 
 - Type into textField
 ```swift
@@ -77,15 +78,15 @@ app.alerts["Alert Title"].buttons["Button Title"].tap()
 - Handle system alerts (location services, push notifications, access microphone, contacts or access to your photos)   
 	*Present a photo access request dialog to the user and dismiss it with the following code. Before presenting the alert add a UI Interuption Handler. When this fires, dismiss with the "Allow" button.*
 
-	```swift
-	addUIInterruptionMonitor(withDescription: \"Access Photos\") { (alert) -> Bool in
- 	 alert.buttons["Allow"].tap()
-  	return true
+```swift
+addUIInterruptionMonitor(withDescription: \"Access Photos\") { (alert) -> Bool in
+	alert.buttons["Allow"].tap()
+    return true
 	}
 
-	app.buttons["Your Photos"].tap()
-	app.tap() // need to interact with the app again for the handler to fire
-    ```
+app.buttons["Your Photos"].tap()
+app.tap() // need to interact with the app again for the handler to fire
+```
 
 - Slide a slider   
 *// set value to 90%*   
@@ -100,13 +101,13 @@ app.pickerWheels.element.adjust(toPickerWheelValue: "Picker Wheel Item Title")
 
 - Interact with multiple wheels picker: set up accessibility so that different wheels could be identified   
 ```swift
-	let firstPredicate = NSPredicate(format: "label BEGINSWITH 'First Picker'")
-	let firstPicker = app.pickerWheels.element(matching: firstPredicate)
-	firstPicker.adjust(toPickerWheelValue: "first value")
+let firstPredicate = NSPredicate(format: "label BEGINSWITH 'First Picker'")
+let firstPicker = app.pickerWheels.element(matching: firstPredicate)
+firstPicker.adjust(toPickerWheelValue: "first value")
 
-	let secondPredicate = NSPredicate(format: "label BEGINSWITH 'Second Picker'")
-	let secondPicker = app.pickerWheels.element(matching: secondPredicate)
-	secondPicker.adjust(toPickerWheelValue: "second value")
+let secondPredicate = NSPredicate(format: "label BEGINSWITH 'Second Picker'")
+let secondPicker = app.pickerWheels.element(matching: secondPredicate)
+secondPicker.adjust(toPickerWheelValue: "second value")
 ```
 
 - Tap on a link in web views UIWebView/WKWebView
