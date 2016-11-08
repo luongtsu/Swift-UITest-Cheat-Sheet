@@ -27,9 +27,9 @@
   * [Pinch action](#)
   * [Check the current controller's title](#)
   * [Reorder tableviewcells](#)
-  * [Pull to refresh](#)
-  * [Check if view controller is pushed successful](#Check if view controller is pushed successful)
-  * [Check after popping a view controller](#Check after popping a view controller)
+  * [Pull to refresh](#pull-to-refresh)
+  * [Check if view controller is pushed successful](#Check-if-view-controller-is-pushed-successful)
+  * [Check after popping a view controller](#Check-after-popping-a-view-controller)
 * [Generic querying syntaxes](#generic-querying-syntaxes)
 
 ## How to prepare for UITest in XCode
