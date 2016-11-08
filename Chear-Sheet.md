@@ -9,7 +9,7 @@
 	get UIDeviceOrientation type from public accessible property *-orientation*
 - Query for elements using XCUIElementQuery (see *Generic querying syntax*)
 
-## Basic functionality
+## Basic functionalities
 - Launch app in test class's setUp() function to ensure the app launches clean for every test
 `override func setUp() {
         super.setUp()
@@ -23,7 +23,7 @@
 - Testing if an element exists (even if the element is off the screen)
 `XCTAssert(app.staticTexts["Welcome"].exists)`
 
-- Check if a view is on the screen
+- Checking if a view is on the screen
 `let window = app.windows.element(boundBy: 0)
 let btnShowMore = app.buttons["Show more"]
 XCTAssert(CGRectContainsRect(window.frame, btnShowMore.frame))`
@@ -44,9 +44,9 @@ waitForExpectations(timeout: 5, handler: nil)
 XCTAssert(detailsLabel.exists)
 //If five seconds pass before the expectation is met then the test will fail.`
 
-+Assertions: just type *XCTAssert* then XCode will show the hint with different type of assertions for you to use (*XCTAssertEquals*,*XCTAssertNotNil*,etc)
+- Assertions: just type *XCTAssert* then XCode will show the hint with different type of assertions for you to use (*XCTAssertEquals*,*XCTAssertNotNil*,etc)
 
-## Interacting with system controls
+## Interactions with system controls
 - Tap a button
 `app.buttons["Add"].tap()`
 
@@ -89,7 +89,7 @@ app.tap() // need to interact with the app again for the handler to fire`
 - Tap on a link in web views UIWebView/WKWebView
 `app.links["Tweet this"].tap()`
 
-## Interactions
+## Other interactions
 
 - Longpress a button
 `app.pickers.elementAtIndex(0).pressForDuration(0.1, thenDragToElement: someElement)`
