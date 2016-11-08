@@ -4,8 +4,8 @@
 
 * [How to prepare for UITest in XCode](#how-to-prepare-for-UITest-in-XCode)
 * [Basic functionalities](#basic-functionalities)
-  * [Launch app](#launch app)
-  * [Print the accessibility hierarchy](#)
+  * Launch app
+  * Print the accessibility hierarchy
   * [Testing if an element exists](#)
   * [Checking if a view is on the screen](#)
   * [Testing if textview with given text exist](#)
@@ -27,7 +27,7 @@
   * [Pinch action](#)
   * [Check the current controller's title](#)
   * [Reorder tableviewcells](#)
-  * [Pull to refresh](#pull-to-refresh)
+  * [Pull to refresh](#pull-to refresh)
   * [Check if view controller is pushed successful](#Check-if-view-controller-is-pushed-successful)
   * [Check after popping a view controller](#Check-after-popping-a-view-controller)
 * [Generic querying syntaxes](#generic-querying-syntaxes)
