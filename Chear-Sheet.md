@@ -10,11 +10,11 @@
 - Query for elements using XCUIElementQuery (see *Generic querying syntax*)
 
 ## Basic functionalities
-- Launch app in test class's setUp() function to ensure the app launches clean for every test
-`override func setUp() {
-        super.setUp()
-		let app = XCUIApplication()
-        app.launch(
+- Launch app in test class's setUp() function to ensure the app launches clean for every test    
+`override func setUp() {    
+        super.setUp()    
+		let app = XCUIApplication()    
+        app.launch(    
 }`
 *In this ducumentation, when ever I refer to "app" that mean "app" in `let app = XCUIApplication()`*
 - Print the accessibility hierarchy
