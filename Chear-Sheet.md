@@ -77,14 +77,14 @@ app.tap() // need to interact with the app again for the handler to fire`
 `app.pickerWheels.element.adjust(toPickerWheelValue: "Picker Wheel Item Title")`
 
 - Interact with multiple wheels picker: set up accessibility so that different wheels could be identified   
-```
+`
 	let firstPredicate = NSPredicate(format: "label BEGINSWITH 'First Picker'")
 	let firstPicker = app.pickerWheels.element(matching: firstPredicate)
 	firstPicker.adjust(toPickerWheelValue: "first value")
 
 	let secondPredicate = NSPredicate(format: "label BEGINSWITH 'Second Picker'")
 	let secondPicker = app.pickerWheels.element(matching: secondPredicate)
-	secondPicker.adjust(toPickerWheelValue: "second value")```
+	secondPicker.adjust(toPickerWheelValue: "second value")`
 
 - Tap on a link in web views UIWebView/WKWebView
 `app.links["Tweet this"].tap()`
