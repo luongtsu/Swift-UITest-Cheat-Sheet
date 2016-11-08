@@ -18,7 +18,8 @@ override func setUp() {
         super.setUp()    
 		let app = XCUIApplication()    
         app.launch(    
-}```
+}
+```
 *In this ducumentation, when ever I refer to "app" that mean "app" in `let app = XCUIApplication()`*
 - Print the accessibility hierarchy
 ```swift
@@ -37,7 +38,8 @@ XCTAssert(CGRectContainsRect(window.frame, btnShowMore.frame))
 - Testing if textview with given text exist
 ```swift
 let anyTextView = app.staticTexts["Hi John"]
-XCTAssert(anyTextView.exists)```
+XCTAssert(anyTextView.exists)
+```
 
 - Waiting for an element to appear
 ```swift
@@ -50,7 +52,8 @@ expectation(for: exists, evaluatedWithObject: detailsLabel, handler: nil)
 app.buttons["Show details"].tap()
 waitForExpectations(timeout: 5, handler: nil)
 XCTAssert(detailsLabel.exists)
-//If five seconds pass before the expectation is met then the test will fail.```
+//If five seconds pass before the expectation is met then the test will fail.
+```
 
 - Assertions: just type *XCTAssert* then XCode will show the hint with different type of assertions for you to use (*XCTAssertEquals*,*XCTAssertNotNil*,etc)
 
@@ -63,11 +66,13 @@ app.buttons["Add"].tap()```
 ```swift
 let textField = app.textFields["Username"]
 textField.tap()
-textField.typeText("John")```
+textField.typeText("John")
+```
 
 - Dismiss an alert
 ```swift
-app.alerts["Alert Title"].buttons["Button Title"].tap()```
+app.alerts["Alert Title"].buttons["Button Title"].tap()
+```
 
 - Handle system alerts (location services, push notifications, access microphone, contacts or access to your photos)   
 	*Present a photo access request dialog to the user and dismiss it with the following code. Before presenting the alert add a UI Interuption Handler. When this fires, dismiss with the "Allow" button.*
@@ -79,16 +84,19 @@ app.alerts["Alert Title"].buttons["Button Title"].tap()```
 	}
 
 	app.buttons["Your Photos"].tap()
-	app.tap() // need to interact with the app again for the handler to fire```
+	app.tap() // need to interact with the app again for the handler to fire
+    ```
 
 - Slide a slider   
 *// set value to 90%*   
 ```swift
-app.sliders.element.adjust(toNormalizedSliderPosition: 0.9)```
+app.sliders.element.adjust(toNormalizedSliderPosition: 0.9)
+```
 
 - Interact with one wheel picker
 ```swift
-app.pickerWheels.element.adjust(toPickerWheelValue: "Picker Wheel Item Title")```
+app.pickerWheels.element.adjust(toPickerWheelValue: "Picker Wheel Item Title")
+```
 
 - Interact with multiple wheels picker: set up accessibility so that different wheels could be identified   
 ```swift
@@ -98,7 +106,8 @@ app.pickerWheels.element.adjust(toPickerWheelValue: "Picker Wheel Item Title")``
 
 	let secondPredicate = NSPredicate(format: "label BEGINSWITH 'Second Picker'")
 	let secondPicker = app.pickerWheels.element(matching: secondPredicate)
-	secondPicker.adjust(toPickerWheelValue: "second value")```
+	secondPicker.adjust(toPickerWheelValue: "second value")
+```
 
 - Tap on a link in web views UIWebView/WKWebView
 ```swift
@@ -111,21 +120,24 @@ app.links["Tweet this"].tap()```
 app.pickers.elementAtIndex(0).pressForDuration(0.1, thenDragToElement: someElement)```
 
 - Swipe action
-```
+```swift
 app.tables.staticTexts["Swipe me"].swipeUp()```
 
 - Two finger tap
-```
+```swift
 let view = app.descendantsMatchingType(.Unknow)["myView"]
-view.twoFingerTap()```
+view.twoFingerTap()
+```
 
 - Pinch action
+```swift
+app.maps.element.pinchWithScale(1.5, velocity: 1)
 ```
-app.maps.element.pinchWithScale(1.5, velocity: 1)```
 
 - Check the current controller's title
+```swift
+XCTAssert(app.navigationBars["Main menu"].exists)
 ```
-XCTAssert(app.navigationBars["Main menu"].exists)```
 
 - Reorder tableviewcells
 *If you have a UITableViewCell with default style and set the text to "Title", the reorder control's accessibility label becomes "Reorder Title". Using this we can drag one reorder control to another, essentially reordering the cells.*
@@ -134,7 +146,8 @@ let topButton = app.buttons["Reorder Top Cell"]
 let bottomButton = app.buttons["Reorder Bottom Cell"]
 bottomButton.press(forDuration: 0.5, thenDragTo: topButton)
 
-XCTAssertLessThanOrEqual(bottomButton.frame.maxY, topButton.frame.minY)```
+XCTAssertLessThanOrEqual(bottomButton.frame.maxY, topButton.frame.minY)
+```
 
 - Pull to refresh
 *Create a XCUICoordinate from the first cell in your table and another one with a dy of six. Then drag the first coordinate to the second.*
@@ -142,16 +155,19 @@ XCTAssertLessThanOrEqual(bottomButton.frame.maxY, topButton.frame.minY)```
 let firstCell = app.staticTexts["Adrienne"]
 let start = firstCell.coordinate(withNormalizedOffset: (CGVectorMake(0, 0))
 let finish = firstCell.coordinate(withNormalizedOffset: (CGVectorMake(0, 6))
-start.press(forDuration: 0, thenDragTo: finish)```
+start.press(forDuration: 0, thenDragTo: finish)
+```
 
 - Check if view controller is pushed successful
 ```swift
-app.buttons["Details Info"].tap(XCTAssert(app.navigationBars["Details"].exists)```
+app.buttons["Details Info"].tap(XCTAssert(app.navigationBars["Details"].exists)
+```
 
 - Check after popping a view controller (tap on Back button)
 ```swift
 app.navigationBars.buttons.elementBoundByIndex(0).tap()
-XCTAssert(app.navigationBars["Volley"].exists)```
+XCTAssert(app.navigationBars["Volley"].exists)
+```
 
 ## Generic querying syntaxes
 *UI Testing uses XCUIElementQuery to query elements in the app's view hierarchy. The syntax creates a buildable set of instructions to drill down to different parts of the screen.*
