@@ -115,7 +115,7 @@ app.alerts["Alert Title"].buttons["Button Title"].tap()
 addUIInterruptionMonitor(withDescription: \"Access Photos\") { (alert) -> Bool in
 	alert.buttons["Allow"].tap()
     return true
-	}
+}
 
 app.buttons["Your Photos"].tap()
 app.tap() // need to interact with the app again for the handler to fire
