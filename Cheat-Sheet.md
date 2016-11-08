@@ -4,32 +4,32 @@
 
 * [How to prepare for UITest in XCode](#how-to-prepare-for-UITest-in-XCode)
 * [Basic functionalities](#basic-functionalities)
-  * Launch app
+  * Launch app in test class's setUp() function to ensure the app launches clean for every test
   * Print the accessibility hierarchy
-  * [Testing if an element exists](#)
-  * [Checking if a view is on the screen](#)
-  * [Testing if textview with given text exist](#)
-  * [Waiting for an element to appear](#)
-  * [Assertions](#)
-* [Interactions with system controls](#)
-  * [Tap a button](#)
-  * [Type into textField](#)
-  * [Dismiss an alert](#)
-  * [Handle system alerts](#)
-  * [Slide a slider](#)
-  * [Interact with one wheel picker](#)
-  * [Interact with multiple wheels picker](#)
-  * [Tap on a link in web views UIWebView/WKWebView](#)
-* [Other interactions](#)
-  * [Longpress a button](#)
-  * [Swipe action](#)
-  * [Two finger tap](#)
-  * [Pinch action](#)
-  * [Check the current controller's title](#)
-  * [Reorder tableviewcells](#)
-  * [Pull to refresh](#pull-to refresh)
-  * [Check if view controller is pushed successful](#Check-if-view-controller-is-pushed-successful)
-  * [Check after popping a view controller](#Check-after-popping-a-view-controller)
+  * Testing if an element exists (even if the element is off the screen)
+  * Checking if a view is on the screen
+  * Testing if textview with given text exist
+  * Waiting for an element to appear
+  * Assertions 
+* [Interactions with system controls](#interactions-with-system-controls)
+  * Tap a button
+  * Type into textField
+  * Dismiss an alert
+  * Handle system alerts (location services, push notifications, access microphone, contacts or access to your photos)
+  * Slide a slider
+  * Interact with one wheel picker
+  * Interact with multiple wheels picker: set up accessibility so that different wheels could be identified
+  * Tap on a link in web views UIWebView/WKWebView
+* [Other interactions](#other-interactions)
+  * Longpress a button
+  * Swipe action
+  * Two finger tap
+  * Pinch action
+  * Check the current controller's title
+  * Reorder tableviewcells
+  * Pull to refresh
+  * Check if view controller is pushed successful
+  * Check after popping a view controller (tap on Back button)
 * [Generic querying syntaxes](#generic-querying-syntaxes)
 
 ## How to prepare for UITest in XCode
