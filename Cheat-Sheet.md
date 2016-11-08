@@ -35,9 +35,9 @@
 ## How to prepare for UITest in XCode
 - Check your projects if UITest target is existing. If not, don't worry. Let's add it by opening XCode, choose File/New/Target, choose iOS UI Testing Bundle, Next & Finish.
 - User @testable macro to allow UITest class access you test class  
-	```swift 
-    @testable import My_UITest_Example
-    ```   
+```swift 
+@testable import My_UITest_Example
+```   
 - Access application through XCUIApplication, you can launch(), you also can terminate() it.
 - Access the device through XCUIDevice:   
 	get new instance of it using *-sharedDevice*   
@@ -145,17 +145,20 @@ secondPicker.adjust(toPickerWheelValue: "second value")
 
 - Tap on a link in web views UIWebView/WKWebView
 ```swift
-app.links["Tweet this"].tap()```
+app.links["Tweet this"].tap()
+```
 
 ## Other interactions
 
 - Longpress a button
 ```swift
-app.pickers.elementAtIndex(0).pressForDuration(0.1, thenDragToElement: someElement)```
+app.pickers.elementAtIndex(0).pressForDuration(0.1, thenDragToElement: someElement)
+```
 
 - Swipe action
 ```swift
-app.tables.staticTexts["Swipe me"].swipeUp()```
+app.tables.staticTexts["Swipe me"].swipeUp()
+```
 
 - Two finger tap
 ```swift
