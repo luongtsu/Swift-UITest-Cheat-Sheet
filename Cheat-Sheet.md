@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [How to prepare for UITest in XCode](#how-to-prepare-for-UITest-in-XCode)
+* [How to prepare for UITest in XCode](#how-to-prepare-for-uitest-in-xcode)
 * [Basic functionalities](#basic-functionalities)
   * Launch app in test class's setUp() function to ensure the app launches clean for every test
   * Print the accessibility hierarchy
@@ -38,14 +38,14 @@
 ```swift 
 @testable import My_UITest_Example
 ```   
-- Access application through XCUIApplication, you can launch(), you also can terminate() it.
+- Access application through XCUIApplication, you can **launch()**, you also can **terminate()** it.
 - Access the device through XCUIDevice:   
 	get new instance of it using **-sharedDevice**   
 	get UIDeviceOrientation type from public accessible property **-orientation**
 - Query for elements using XCUIElementQuery (see *Generic querying syntax*)
 
 ## Basic functionalities
-- Launch app in test class's setUp() function to ensure the app launches clean for every test    
+- Launch app in test class's **setUp()** function to ensure the app launches clean for every test    
 ```swift
 override func setUp() {    
         super.setUp()    
@@ -53,7 +53,7 @@ override func setUp() {
         app.launch(    
 }
 ```
-	*In this ducumentation, when ever I refer to "app" that mean "app" in* `let app = XCUIApplication()`
+	*In this ducumentation, whenever we refer to "app" that mean "app" in* `let app = XCUIApplication()`
 - Print the accessibility hierarchy
 ```swift
 print(app.debugDescription)
@@ -197,7 +197,8 @@ start.press(forDuration: 0, thenDragTo: finish)
 
 - Check if view controller is pushed successful
 ```swift
-app.buttons["Details Info"].tap(XCTAssert(app.navigationBars["Details"].exists)
+app.buttons["Details Info"].tap()   
+XCTAssert(app.navigationBars["Details"].exists
 ```
 
 - Check after popping a view controller (tap on Back button)
@@ -209,10 +210,10 @@ XCTAssert(app.navigationBars["Volley"].exists)
 ## Generic querying syntaxes
 *UI Testing uses **XCUIElementQuery** to query elements in the app's view hierarchy. The syntax creates a buildable set of instructions to drill down to different parts of the screen.*
 
-- `app.labels.element` returns the one and only UILabel
-- `app.buttons["Save"]` returns the "Save" button (via accessibility)
-- `app.cells[4]` returns the fifth table view cell
-- `app.tables.element.cells.elementBoundByIndex(4).tap()`
-- `app.tables.element.cells["Call Mom"].buttons["More"].tap()`
-	By referencing `-element` you are essentially saying, "I know there is only one of these, I want that one."
-- These convenience methods work by calling `-elementMatchingType:identifier:` with `XCUIElementTypeAny` and the string you passed in. Check out `XCUIElementType` for all the options if you want finer grain control.
+- **app.labels.element** returns the one and only UILabel
+- **app.buttons["Save"]** returns the "Save" button (via accessibility)
+- **app.cells[4]** returns the fifth table view cell
+- **app.tables.element.cells.elementBoundByIndex(4).tap()**
+- **app.tables.element.cells["Call Mom"].buttons["More"].tap()**
+	By referencing **-element** you are essentially saying, "I know there is only one of these, I want that one."
+- These convenience methods work by calling **-elementMatchingType:identifier:** with **XCUIElementTypeAny** and the string you passed in. Check out **XCUIElementType** for all the available options.
