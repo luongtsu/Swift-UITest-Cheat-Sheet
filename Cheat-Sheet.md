@@ -208,12 +208,12 @@ XCTAssert(app.navigationBars["Volley"].exists)
 ```
 
 ## Generic querying syntaxes
-*UI Testing uses **XCUIElementQuery** to query elements in the app's view hierarchy. The syntax creates a buildable set of instructions to drill down to different parts of the screen.*
+UI Testing uses **XCUIElementQuery** to query elements in the app's view hierarchy. The syntax creates a buildable set of instructions to drill down to different parts of the screen.
 
 - **app.labels.element** returns the one and only UILabel
 - **app.buttons["Save"]** returns the "Save" button (via accessibility)
 - **app.cells[4]** returns the fifth table view cell
 - **app.tables.element.cells.elementBoundByIndex(4).tap()**
-- **app.tables.element.cells["Call Mom"].buttons["More"].tap()**
+- **app.tables.element.cells["Call Mom"].buttons["More"].tap()**   
 	By referencing **-element** you are essentially saying, "I know there is only one of these, I want that one."
 - These convenience methods work by calling **-elementMatchingType:identifier:** with **XCUIElementTypeAny** and the string you passed in. Check out **XCUIElementType** for all the available options.
