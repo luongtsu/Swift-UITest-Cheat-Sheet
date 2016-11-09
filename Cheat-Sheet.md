@@ -53,7 +53,7 @@ override func setUp() {
         app.launch(    
 }
 ```
-	*In this ducumentation, whenever we refer to "app" that mean "app" in* `let app = XCUIApplication()`
+In this ducumentation, whenever we refer to "app" that mean "app" in **let app = XCUIApplication()**
 - Print the accessibility hierarchy
 ```swift
 print(app.debugDescription)
