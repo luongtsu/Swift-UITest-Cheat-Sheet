@@ -34,14 +34,14 @@
 
 ## How to prepare for UITest in XCode
 - Check your projects if UITest target is existing. If not, don't worry. Let's add it by opening XCode, choose File/New/Target, choose iOS UI Testing Bundle, Next & Finish.
-- User @testable macro to allow UITest class access you test class  
+- User **@testable** macro to allow UITest class access you test class  
 ```swift 
 @testable import My_UITest_Example
 ```   
 - Access application through XCUIApplication, you can launch(), you also can terminate() it.
 - Access the device through XCUIDevice:   
-	get new instance of it using *-sharedDevice*   
-	get UIDeviceOrientation type from public accessible property *-orientation*
+	get new instance of it using **-sharedDevice**   
+	get UIDeviceOrientation type from public accessible property **-orientation**
 - Query for elements using XCUIElementQuery (see *Generic querying syntax*)
 
 ## Basic functionalities
@@ -53,7 +53,7 @@ override func setUp() {
         app.launch(    
 }
 ```
-*In this ducumentation, when ever I refer to "app" that mean "app" in `let app = XCUIApplication()`*
+*In this ducumentation, when ever I refer to "app" that mean "app" in* `let app = XCUIApplication()`
 - Print the accessibility hierarchy
 ```swift
 print(app.debugDescription)
@@ -88,7 +88,7 @@ XCTAssert(detailsLabel.exists)
 //If five seconds pass before the expectation is met then the test will fail.
 ```
 
-- Assertions: just type *XCTAssert* then XCode will show the hint with different type of assertions for you to use (*XCTAssertEquals*,*XCTAssertNotNil*,etc)
+- Assertions: just type **XCTAssert** then XCode will show the hint with different type of assertions for you to use (*XCTAssertEquals*,*XCTAssertNotNil*,etc)
 
 ## Interactions with system controls
 - Tap a button
@@ -207,7 +207,7 @@ XCTAssert(app.navigationBars["Volley"].exists)
 ```
 
 ## Generic querying syntaxes
-*UI Testing uses XCUIElementQuery to query elements in the app's view hierarchy. The syntax creates a buildable set of instructions to drill down to different parts of the screen.*
+*UI Testing uses **XCUIElementQuery** to query elements in the app's view hierarchy. The syntax creates a buildable set of instructions to drill down to different parts of the screen.*
 
 - `app.labels.element` returns the one and only UILabel
 - `app.buttons["Save"]` returns the "Save" button (via accessibility)
