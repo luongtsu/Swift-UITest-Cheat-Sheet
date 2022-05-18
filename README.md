@@ -51,7 +51,7 @@
 ```swift
 override func setUp() {    
         super.setUp()    
-		let app = XCUIApplication()    
+        let app = XCUIApplication()    
         app.launch(    
 }
 ```
